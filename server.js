@@ -51,7 +51,11 @@ app.post("/send-notification/", async (req, res) => {
     });
     res
       .status(200)
-      .send({ message: "Notification sent successfully", response });
+      .send({
+        message: "Notification sent successfully",
+        data: data,
+        response,
+      });
   } catch (err) {
     res
       .status(500)
