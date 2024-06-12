@@ -28,10 +28,11 @@ if (!firebase.apps.length) {
 }
 
 app.post("/send-notification/", async (req, res) => {
-  const { token, title, body } = await req.body;
+  const { token, title, body, data } = await req.body;
   console.log("send notification called");
 
   console.log("req body is ", req.body);
+  console.log("data: ", data);
 
   if (!token || !title || !body) {
     return res
