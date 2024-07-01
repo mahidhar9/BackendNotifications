@@ -49,17 +49,16 @@ app.post("/send-notification/", async (req, res) => {
         body,
       },
     });
-    res
-      .status(200)
-      .send({
-        message: "Notification sent successfully",
-        data: data,
-        response,
-      });
+    res.status(200).send({
+      message: "Notification sent successfully",
+      data: data,
+      response,
+    });
   } catch (err) {
     res
       .status(500)
       .send({ error: "Error sending notification", details: err.message });
+    console.log("Error", err);
   }
 });
 
