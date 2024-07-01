@@ -48,7 +48,8 @@ app.post("/send-notification/", async (req, res) => {
         title,
         body,
       },
-      data: { navigationId: "FillByYourSelf" },
+      // data: { navigationId: "FillByYourSelf" },
+      data: data,
     });
     res.status(200).send({
       message: "Notification sent successfully",
